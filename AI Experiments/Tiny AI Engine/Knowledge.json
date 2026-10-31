@@ -1,0 +1,452 @@
+[
+  {
+    "question": "What is artificial intelligence?",
+    "answer": "Artificial intelligence (AI) is the field of building computer systems that perform tasks associated with human intelligence, such as learning, reasoning, recognizing patterns, and understanding language.",
+    "keywords": [
+      "AI",
+      "intelligent machines",
+      "computer systems",
+      "reasoning",
+      "learning"
+    ],
+    "alternate_questions": [
+      "What is AI?",
+      "Define artificial intelligence",
+      "Explain AI"
+    ]
+  },
+  {
+    "question": "What is machine learning?",
+    "answer": "Machine learning is a branch of AI in which a computer system learns patterns from data and uses those patterns to make predictions or decisions.",
+    "keywords": [
+      "ML",
+      "data",
+      "training",
+      "patterns",
+      "model"
+    ],
+    "alternate_questions": [
+      "What does machine learning mean?",
+      "Define ML"
+    ]
+  },
+  {
+    "question": "What is a neural network?",
+    "answer": "A neural network is a computational model made of connected units called neurons, usually arranged in layers. It learns by adjusting the strengths of connections called weights and biases.",
+    "keywords": [
+      "neurons",
+      "layers",
+      "weights",
+      "biases",
+      "connections"
+    ],
+    "alternate_questions": [
+      "Explain neural networks",
+      "What are artificial neural networks?"
+    ]
+  },
+  {
+    "question": "What is an artificial neuron?",
+    "answer": "An artificial neuron receives input numbers, multiplies them by weights, adds a bias, and applies an activation function to produce an output.",
+    "keywords": [
+      "input",
+      "weight",
+      "bias",
+      "activation",
+      "prediction"
+    ],
+    "alternate_questions": [
+      "What is a neuron in AI?",
+      "Explain one neuron"
+    ]
+  },
+  {
+    "question": "What is a model in machine learning?",
+    "answer": "A machine-learning model is a mathematical system with parameters learned from data. After training, it uses those parameters to produce predictions or outputs for new inputs.",
+    "keywords": [
+      "parameters",
+      "weights",
+      "biases",
+      "prediction",
+      "learned"
+    ],
+    "alternate_questions": [
+      "What is an AI model?",
+      "Define model"
+    ]
+  },
+  {
+    "question": "What is training in AI?",
+    "answer": "Training is the process of showing a model examples, measuring its errors with a loss function, and adjusting its parameters so its predictions improve.",
+    "keywords": [
+      "learning",
+      "examples",
+      "data",
+      "loss",
+      "weights",
+      "optimization"
+    ],
+    "alternate_questions": [
+      "How does an AI learn?",
+      "What happens during model training?"
+    ]
+  },
+  {
+    "question": "What is a weight in a neural network?",
+    "answer": "A weight is a learned number that controls how strongly an input or another neuron influences a neuron's calculation. Training adjusts weights to improve the model's output.",
+    "keywords": [
+      "parameter",
+      "connection",
+      "importance",
+      "strength",
+      "learn"
+    ],
+    "alternate_questions": [
+      "What do weights do?",
+      "Explain neural network weights"
+    ]
+  },
+  {
+    "question": "What is a bias in a neural network?",
+    "answer": "A bias is a learned number added to a neuron's weighted input. It gives the neuron flexibility to shift its activation rather than forcing the calculation through zero.",
+    "keywords": [
+      "parameter",
+      "offset",
+      "neuron",
+      "learned"
+    ],
+    "alternate_questions": [
+      "Why do neurons have bias?",
+      "Explain the bias parameter"
+    ]
+  },
+  {
+    "question": "What is a loss function?",
+    "answer": "A loss function measures how different a model's prediction is from the correct target. Training tries to reduce this loss.",
+    "keywords": [
+      "error",
+      "prediction",
+      "target",
+      "measure",
+      "training"
+    ],
+    "alternate_questions": [
+      "What is loss in machine learning?",
+      "How does a model measure mistakes?"
+    ]
+  },
+  {
+    "question": "What is gradient descent?",
+    "answer": "Gradient descent is an optimization method that changes model parameters in the direction that reduces the loss. The learning rate controls the size of each update.",
+    "keywords": [
+      "optimization",
+      "gradient",
+      "learning rate",
+      "parameters",
+      "loss"
+    ],
+    "alternate_questions": [
+      "Explain gradient descent",
+      "How are model weights updated?"
+    ]
+  },
+  {
+    "question": "What is backpropagation?",
+    "answer": "Backpropagation calculates how the loss changes with respect to each network parameter. It applies the chain rule from the output layer backwards so training can update the weights.",
+    "keywords": [
+      "chain rule",
+      "gradients",
+      "neural network",
+      "loss",
+      "derivatives"
+    ],
+    "alternate_questions": [
+      "How does backpropagation work?",
+      "Explain backward propagation"
+    ]
+  },
+  {
+    "question": "What is a tokenizer?",
+    "answer": "A tokenizer splits text into smaller pieces called tokens and converts those tokens into numerical IDs that a language model can process.",
+    "keywords": [
+      "text",
+      "tokens",
+      "IDs",
+      "vocabulary",
+      "language model"
+    ],
+    "alternate_questions": [
+      "What does tokenization do?",
+      "Why do language models need tokenizers?"
+    ]
+  },
+  {
+    "question": "What is a token?",
+    "answer": "A token is a unit of text used by a language model. Depending on the tokenizer, a token can represent a character, part of a word, a whole word, or another text unit.",
+    "keywords": [
+      "text",
+      "word",
+      "subword",
+      "character",
+      "tokenizer",
+      "ID"
+    ],
+    "alternate_questions": [
+      "What are tokens in AI?",
+      "Define a text token"
+    ]
+  },
+  {
+    "question": "What is attention in a Transformer?",
+    "answer": "Attention lets each token combine information from other tokens. It calculates relevance scores using queries and keys, then uses those scores to mix value vectors.",
+    "keywords": [
+      "query",
+      "key",
+      "value",
+      "tokens",
+      "relationships",
+      "context"
+    ],
+    "alternate_questions": [
+      "What does self attention do?",
+      "Explain attention mechanism"
+    ]
+  },
+  {
+    "question": "What is a Transformer?",
+    "answer": "A Transformer is a neural-network architecture built around attention. It processes token representations using attention layers and feed-forward layers, with residual connections and normalization.",
+    "keywords": [
+      "attention",
+      "layers",
+      "tokens",
+      "embeddings",
+      "feed forward",
+      "language model"
+    ],
+    "alternate_questions": [
+      "Explain Transformer architecture",
+      "What is a Transformer neural network?"
+    ]
+  },
+  {
+    "question": "What is GPT?",
+    "answer": "GPT stands for Generative Pre-trained Transformer. It describes a family of language models that use a Transformer architecture to predict and generate text.",
+    "keywords": [
+      "generative",
+      "pretrained",
+      "transformer",
+      "language model",
+      "text"
+    ],
+    "alternate_questions": [
+      "What does GPT stand for?",
+      "Explain GPT"
+    ]
+  },
+  {
+    "question": "What is NumPy?",
+    "answer": "NumPy is a Python library for numerical computing. It provides efficient multidimensional arrays and mathematical operations. In this project, we use it for array calculations while implementing the AI algorithms ourselves.",
+    "keywords": [
+      "Python",
+      "arrays",
+      "mathematics",
+      "numerical computing"
+    ],
+    "alternate_questions": [
+      "Why use NumPy in Python?",
+      "What does the NumPy library do?"
+    ]
+  },
+  {
+    "question": "What programming language is this project written in?",
+    "answer": "AI Experiment is written in Python and uses NumPy for numerical array operations. Its learning algorithms and model components are implemented in this project.",
+    "keywords": [
+      "Python",
+      "programming",
+      "NumPy",
+      "source code"
+    ],
+    "alternate_questions": [
+      "Which language does AI Experiment use?",
+      "What language are we using?"
+    ]
+  },
+  {
+    "question": "What is this Tiny AI Engine?",
+    "answer": "I'm Tiny AI, a small question-answering engine built in this project with Python and NumPy. I can answer questions covered by my local knowledge base and calculate basic arithmetic. I do not use a pretrained model or an external AI API.",
+    "keywords": [
+      "assistant",
+      "question answering",
+      "custom",
+      "from scratch",
+      "knowledge base"
+    ],
+    "alternate_questions": [
+      "What can you do?",
+      "Who are you?",
+      "What is your purpose?"
+    ]
+  },
+  {
+    "question": "What are the limitations of this Tiny AI Engine?",
+    "answer": "I'm a deliberately small system. I match questions to information in my local knowledge base and handle basic arithmetic. I do not have broad world knowledge, learn language like a large GPT model, browse the internet, or guarantee an answer outside my stored information.",
+    "keywords": [
+      "limitations",
+      "knowledge",
+      "small",
+      "not a large language model",
+      "unknown"
+    ],
+    "alternate_questions": [
+      "What can you not do?",
+      "Are you as capable as ChatGPT?"
+    ]
+  },
+  {
+    "question": "Who created Python?",
+    "answer": "Python was created by Guido van Rossum and first released in 1991.",
+    "keywords": [
+      "Guido van Rossum",
+      "Python creator",
+      "programming language"
+    ],
+    "alternate_questions": [
+      "Who invented Python programming language?"
+    ]
+  },
+  {
+    "question": "What is the difference between AI and machine learning?",
+    "answer": "AI is the broader field of building systems that perform intelligent tasks. Machine learning is one approach within AI that learns patterns from data.",
+    "keywords": [
+      "artificial intelligence",
+      "machine learning",
+      "subset",
+      "relationship"
+    ],
+    "alternate_questions": [
+      "How are AI and ML different?"
+    ]
+  },
+  {
+    "question": "What is a learning rate?",
+    "answer": "A learning rate controls the size of each training update.",
+    "keywords": [
+      "optimization",
+      "gradient descent",
+      "step size"
+    ],
+    "alternate_questions": []
+  },
+  {
+    "question": "What is natural language processing?",
+    "answer": "Natural language processing (NLP) is the area of computing that works with human language. A program can normalize text, split it into tokens, identify useful phrases and infer the kind of request a person is making. This project's NLP uses custom rules and lexical matching rather than a pretrained language model.",
+    "keywords": [
+      "NLP",
+      "human language",
+      "text processing",
+      "tokenization",
+      "intent detection"
+    ],
+    "alternate_questions": [
+      "What is NLP?",
+      "Explain natural language processing",
+      "What does NLP mean?"
+    ]
+  },
+  {
+    "question": "What does this AI's custom NLP system do?",
+    "answer": "It normalizes spelling and contractions, tokenizes text, applies lightweight word-root rules, corrects a small number of clear typos, extracts keywords and phrases, detects question intent, expands a few known abbreviations, and helps rank local knowledge matches. It is a transparent rule-based system, not human-level language understanding.",
+    "keywords": [
+      "custom NLP",
+      "normalization",
+      "tokenization",
+      "lemmatization",
+      "intent classification",
+      "keyword extraction"
+    ],
+    "alternate_questions": [
+      "How does this AI understand questions?",
+      "How does the NLP engine work?",
+      "How does your NLP system work?",
+      "How does the NLP system work?"
+    ]
+  },
+  {
+    "question": "What is text normalization?",
+    "answer": "Text normalization converts different written forms into a consistent form before matching. This engine standardizes Unicode punctuation and spacing, lowercases text, and expands common contractions such as what's into what is.",
+    "keywords": [
+      "clean text",
+      "lowercase",
+      "contractions",
+      "unicode",
+      "preprocessing"
+    ],
+    "alternate_questions": [
+      "Why normalize text?",
+      "How does text cleaning work?"
+    ]
+  },
+  {
+    "question": "What is lemmatization?",
+    "answer": "Lemmatization maps related word forms to a simpler base form so they can match. This project's lightweight custom version maps examples such as networks to network and learning to learn. It uses hand-written rules and is less linguistically complete than a trained language tool.",
+    "keywords": [
+      "word roots",
+      "stemming",
+      "morphology",
+      "plural words",
+      "base form"
+    ],
+    "alternate_questions": [
+      "What is stemming?",
+      "How do you match different word forms?"
+    ]
+  },
+  {
+    "question": "What is intent detection?",
+    "answer": "Intent detection estimates what a message is trying to do. This engine uses custom patterns to recognize greetings, definitions, explanations, how-to questions, comparisons, lists, current-information requests, search commands and other question types.",
+    "keywords": [
+      "classification",
+      "question type",
+      "user request",
+      "intent recognition"
+    ],
+    "alternate_questions": [
+      "How does the AI recognize what I am asking?",
+      "What is intent classification?"
+    ]
+  },
+  {
+    "question": "What is keyword extraction?",
+    "answer": "Keyword extraction selects the content words that carry most of a question's meaning. The custom NLP removes common grammatical filler, reduces some word forms to roots, and expands a few known abbreviations such as AI into artificial intelligence before retrieval.",
+    "keywords": [
+      "important words",
+      "stop words",
+      "query terms",
+      "key phrases",
+      "search matching"
+    ],
+    "alternate_questions": [
+      "How does the AI find important words?",
+      "What are keywords in NLP?"
+    ]
+  },
+  {
+    "question": "What is space?",
+    "answer": "Outer space is the vast three-dimensional region beyond Earth's atmosphere. It is almost a vacuum, so it contains very little air or matter, but it is not completely empty: it contains planets, stars, gas, dust and radiation.",
+    "keywords": [
+      "outer space",
+      "vacuum",
+      "astronomy",
+      "planets",
+      "stars",
+      "galaxies"
+    ],
+    "alternate_questions": [
+      "What is outer space?",
+      "Can you explain what space is?",
+      "Tell me about outer space",
+      "What is the space outside Earth?",
+      "What is space made of?"
+    ]
+  }
+]

@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: ai-experiment-tiny-ai
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python app.py
+    healthCheckPath: /api/health
+    envVars:
+      - key: TINY_AI_ALLOW_TEACHING
+        value: "false"
+      - key: TINY_AI_ALLOW_DOCUMENT_UPLOAD
+        value: "false"
+      - key: TINY_AI_ALLOW_MEMORY
+        value: "false"

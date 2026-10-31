@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="A minimal question and answer assistant.">
+  <title>Chat</title>
+  <script>
+    (() => {
+      try {
+        const saved = localStorage.getItem("chat-theme");
+        if (saved === "dark" || saved === "light") {
+          document.documentElement.dataset.theme = saved;
+        }
+      } catch { /* Use the light theme when storage is unavailable. */ }
+    })();
+  </script>
+  <link rel="stylesheet" href="/styles.css?v=20261031-34">
+</head>
+<body>
+  <div class="app-shell">
+
+    <main class="main-content">
+      <section class="chat-layout is-empty" id="chat-layout" aria-label="Chat">
+        <div class="empty-state" id="empty-state">
+          <h1>Welcome user !</h1>
+          <p class="welcome-description">What can I help you with today?</p>
+        </div>
+
+        <div class="messages" id="messages" aria-live="polite" aria-label="Conversation"></div>
+
+        <footer class="composer-area" id="composer-area">
+          <div class="assistant-activity" id="assistant-activity" hidden aria-live="polite" aria-atomic="true">
+            <span class="typing-dots" aria-hidden="true"><span></span><span></span><span></span></span>
+            <span id="activity-label">You're typing</span>
+          </div>
+          <form class="composer" id="chat-form">
+          <div class="tools-panel" id="tools-panel" hidden aria-label="Tool settings">
+            <div class="tools-panel-heading">
+              <div><strong>Tools</strong><small>Choose what can be used in this chat.</small></div>
+            </div>
+            <div class="tools-list">
+              <label class="tool-option" for="tool-calculator">
+                <span class="tool-option-icon" aria-hidden="true"><i data-lucide="calculator"></i></span>
+                <span class="tool-option-copy"><strong>Calculator</strong><small>Evaluate arithmetic safely.</small></span>
+                <input id="tool-calculator" type="checkbox" data-tool="calculator">
+                <span class="tool-switch" aria-hidden="true"></span>
+              </label>
+              <label class="tool-option" for="tool-unit-converter">
+                <span class="tool-option-icon" aria-hidden="true"><i data-lucide="arrow-left-right"></i></span>
+                <span class="tool-option-copy"><strong>Unit converter</strong><small>Convert length, mass, temperature and more.</small></span>
+                <input id="tool-unit-converter" type="checkbox" data-tool="unit_converter">
+                <span class="tool-switch" aria-hidden="true"></span>
+              </label>
+              <label class="tool-option" for="tool-date-time">
+                <span class="tool-option-icon" aria-hidden="true"><i data-lucide="clock"></i></span>
+                <span class="tool-option-copy"><strong>Date &amp; time</strong><small>Local time, dates and time zones.</small></span>
+                <input id="tool-date-time" type="checkbox" data-tool="date_time">
+                <span class="tool-switch" aria-hidden="true"></span>
+              </label>
+              <label class="tool-option" for="tool-date-calculator">
+                <span class="tool-option-icon" aria-hidden="true"><i data-lucide="calendar-range"></i></span>
+                <span class="tool-option-copy"><strong>Date calculator</strong><small>Find date gaps, weekdays, business days and future dates.</small></span>
+                <input id="tool-date-calculator" type="checkbox" data-tool="date_calculator">
+                <span class="tool-switch" aria-hidden="true"></span>
+              </label>
+              <label class="tool-option" for="tool-scientific-math">
+                <span class="tool-option-icon" aria-hidden="true"><i data-lucide="sigma"></i></span>
+                <span class="tool-option-copy"><strong>Scientific math</strong><small>Trigonometry, roots, logarithms and equations.</small></span>
+                <input id="tool-scientific-math" type="checkbox" data-tool="scientific_math">
+                <span class="tool-switch" aria-hidden="true"></span>
+              </label>
+              <label class="tool-option" for="tool-text-analyzer">
+                <span class="tool-option-icon" aria-hidden="true"><i data-lucide="scan-text"></i></span>
+                <span class="tool-option-copy"><strong>Text analyzer</strong><small>Count, analyze, transform and extract text.</small></span>
+                <input id="tool-text-analyzer" type="checkbox" data-tool="text_analyzer">
+                <span class="tool-switch" aria-hidden="true"></span>
+              </label>
+              <label class="tool-option" for="tool-json-tools">
+                <span class="tool-option-icon" aria-hidden="true"><i data-lucide="braces"></i></span>
+                <span class="tool-option-copy"><strong>JSON tools</strong><small>Validate, format, minify and inspect JSON.</small></span>
+                <input id="tool-json-tools" type="checkbox" data-tool="json_tools">
+                <span class="tool-switch" aria-hidden="true"></span>
+              </label>
+              <label class="tool-option" for="tool-web-search">
+                <span class="tool-option-icon" aria-hidden="true"><i data-lucide="globe"></i></span>
+                <span class="tool-option-copy"><strong>Web Search</strong><small>Look up current information online.</small></span>
+                <input id="tool-web-search" type="checkbox" data-tool="web_search">
+                <span class="tool-switch" aria-hidden="true"></span>
+              </label>
+              <label class="tool-option" for="tool-document-reader">
+                <span class="tool-option-icon" aria-hidden="true"><i data-lucide="file-text"></i></span>
+                <span class="tool-option-copy"><strong>Document reader</strong><small>Search and answer from uploaded files.</small></span>
+                <input id="tool-document-reader" type="checkbox" data-tool="document_reader">
+                <span class="tool-switch" aria-hidden="true"></span>
+              </label>
+              <label class="tool-option" for="tool-memory-context">
+                <span class="tool-option-icon" aria-hidden="true"><i data-lucide="brain"></i></span>
+                <span class="tool-option-copy"><strong>Memory &amp; context</strong><small>Remember facts and connect earlier messages.</small></span>
+                <input id="tool-memory-context" type="checkbox" data-tool="memory_context">
+                <span class="tool-switch" aria-hidden="true"></span>
+              </label>
+            </div>
+            <div class="tools-panel-footer"><span>Settings are saved in this browser.</span><button id="tools-done" type="button">Done</button></div>
+          </div>
+          <div class="settings-panel" id="settings-panel" hidden role="dialog" aria-label="Application settings">
+            <div class="settings-panel-heading">
+              <strong>Settings</strong>
+              <button class="settings-close" id="settings-close" type="button" aria-label="Close settings" title="Close settings">
+                <i data-lucide="x" aria-hidden="true"></i>
+              </button>
+            </div>
+            <label class="setting-option" for="sound-effects-toggle" aria-disabled="true">
+              <span class="setting-option-copy">
+                <strong>Sound effects</strong>
+                <small>Interface sounds and audio feedback.</small>
+              </span>
+              <input id="sound-effects-toggle" type="checkbox" disabled aria-label="Sound effects (coming soon)">
+              <span class="setting-switch" aria-hidden="true"></span>
+            </label>
+            <p class="settings-coming-soon">More settings coming soon.</p>
+          </div>
+          <textarea id="message-input" rows="1" maxlength="1000" placeholder="Ask a question..." aria-label="Ask a question"></textarea>
+          <div class="composer-actions">
+            <span class="composer-hint">Enter to send <span aria-hidden="true">·</span> Shift + Enter for a new line</span>
+            <div class="composer-buttons">
+              <button class="new-chat-button" id="new-chat" type="button" aria-label="Start a new chat" title="New chat">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
+              </button>
+              <button class="upload-button" id="upload-document" type="button" aria-label="Upload documents" title="Upload documents">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 16V4m-5 5 5-5 5 5M4 16.5v2A1.5 1.5 0 0 0 5.5 20h13a1.5 1.5 0 0 0 1.5-1.5v-2"></path></svg>
+              </button>
+              <button class="tools-toggle" id="tools-toggle" type="button" aria-label="Open tools" aria-expanded="false" aria-controls="tools-panel" title="Choose enabled tools">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.7 6.3a4.4 4.4 0 0 0-5.8 5.8L3.8 17.2a2.1 2.1 0 0 0 3 3l5.1-5.1a4.4 4.4 0 0 0 5.8-5.8l-2.5 2.5-3-3 2.5-2.5Z"></path><path d="m15.5 8.5 2.2-2.2"></path></svg>
+                <span>Tools</span>
+              </button>
+              <button class="model-selector" id="model-selector" type="button" disabled aria-label="Model: Default" title="Model selection will be available later">
+                <span>Default</span><i data-lucide="chevron-down" aria-hidden="true"></i>
+              </button>
+              <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch to dark mode">
+                <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="12" cy="12" r="3.7"></circle>
+                  <path d="M12 2.5v2M12 19.5v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2.5 12h2m15 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path>
+                </svg>
+                <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M20.3 15.2A8.4 8.4 0 0 1 8.8 3.7 8.5 8.5 0 1 0 20.3 15.2Z"></path>
+                </svg>
+              </button>
+              <button class="settings-toggle" id="settings-toggle" type="button" aria-label="Open settings" aria-expanded="false" aria-controls="settings-panel" title="Settings">
+                <i data-lucide="settings" aria-hidden="true"></i>
+              </button>
+              <button class="mic-button" id="microphone-button" type="button" disabled aria-label="Voice input coming later" title="Voice input coming later">
+                <i data-lucide="mic" aria-hidden="true"></i>
+              </button>
+              <button class="send-button" id="send-button" type="submit" aria-label="Send message">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5m-7 7 7-7 7 7"></path></svg>
+              </button>
+            </div>
+          </div>
+        </form>
+          <input id="document-input" class="visually-hidden" type="file" accept=".pdf,.docx,.txt,.md,.csv,.html,.htm" multiple aria-label="Choose documents to upload">
+          <p class="disclaimer">Answers are limited to the knowledge currently available.</p>
+        </footer>
+
+        <div class="suggestions" id="suggestions" aria-label="Questions this assistant can answer">
+          <button class="suggestion-chip" type="button" data-prompt="What is the difference between AI and machine learning?">What is the difference between AI and machine learning?</button>
+          <button class="suggestion-chip" type="button" data-prompt="How does backpropagation work?">How does backpropagation work?</button>
+          <button class="suggestion-chip" type="button" data-prompt="What is attention in a Transformer?">What is attention in a Transformer?</button>
+          <button class="suggestion-chip" type="button" data-prompt="What is a tokenizer?">What is a tokenizer?</button>
+        </div>
+      </section>
+    </main>
+    <footer class="app-footer" aria-label="Application information">
+      <span id="app-copyright"></span>
+      <span id="app-version"></span>
+    </footer>
+  </div>
+  <script src="https://unpkg.com/lucide@1.66.0/dist/umd/lucide.js" defer></script>
+  <script src="/app.js?v=20261031-35" defer></script>
+</body>
+</html>

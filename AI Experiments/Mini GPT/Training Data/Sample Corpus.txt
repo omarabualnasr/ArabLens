@@ -1,0 +1,15 @@
+the small model learns patterns from text. the model reads words and predicts the next token.
+neural networks learn from examples. a neural network adjusts its weights to reduce error.
+attention helps a model connect tokens in a sequence. a transformer uses attention to process context.
+this tiny language model is trained from scratch. it does not use a pretrained model or an external ai service.
+the goal is to learn how language models work by building each part ourselves.
+the small model learns patterns from text. the model reads words and predicts the next token.
+neural networks learn from examples. a neural network adjusts its weights to reduce error.
+attention helps a model connect tokens in a sequence. a transformer uses attention to process context.
+this tiny language model is trained from scratch. it does not use a pretrained model or an external ai service.
+the goal is to learn how language models work by building each part ourselves.
+the small model learns patterns from text. the model reads words and predicts the next token.
+neural networks learn from examples. a neural network adjusts its weights to reduce error.
+attention helps a model connect tokens in a sequence. a transformer uses attention to process context.
+this tiny language model is trained from scratch. it does not use a pretrained model or an external ai service.
+the goal is to learn how language models work by building each part ourselves.
