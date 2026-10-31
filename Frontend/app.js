@@ -16,8 +16,8 @@ const footerVersion = document.querySelector("#app-version");
 
 // Editable application identity: change these two values to customize the footer.
 const APP_METADATA = {
-  copyright: "© 2026 AI Experiment. All rights reserved.",
-  version: "0.33.0"
+  copyright: "© 2026 Omar Abu Alnasr. All rights reserved.",
+  version: "0.1"
 };
 
 const toolInputs = [...document.querySelectorAll("[data-tool]")];
