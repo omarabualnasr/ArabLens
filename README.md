@@ -1,4 +1,4 @@
-# <div align="center">MiniGPT</div>
+# <h1 align="center">MiniGPT</h1>
 
 <div align="center">
 
@@ -33,8 +33,6 @@ The project combines custom natural language processing, question analysis, evid
 It also includes an independent experimental GPT-style neural language model implemented using Python and NumPy.
 
 The main objective is to explore the underlying components of an AI application rather than depending entirely on an externally hosted language model.
-
-> **Development Notice:** MiniGPT is currently in early development. Its components and capabilities are experimental and are not yet reliable or production-ready.
 
 ## Features
 
@@ -150,33 +148,45 @@ The experiment is maintained separately from the main chat application.
 
 ## Architecture
 
-The following diagram illustrates how the main application components are organized.
+The following diagram illustrates the main application components and their interactions.
 
 ```mermaid
 flowchart TD
-    A["User Input"] --> B["Frontend Chat Interface"]
-    B <--> C["Python Backend"]
+    A["User"] -->|"Enters message"| B["Frontend Chat Interface"]
+    B -->|"Sends request"| C["Python Backend"]
 
-    C --> D["Custom NLP Engine"]
-    D --> E["Question Processing"]
-    E --> F["Knowledge & Retrieval Engine"]
-    F --> G["BM25 Evidence Ranking"]
-    G --> H["Response Composition"]
-    H --> B
+    C --> D["Request Handling"]
+    D --> E["Custom NLP Engine"]
+    E --> F["Question Processing"]
+    F --> G["Knowledge & Retrieval Engine"]
+    G --> H["BM25 Evidence Ranking"]
+    H --> I["Response Composition"]
 
-    E --> I["Optional Tool System"]
+    D --> J["Optional Tool Execution"]
 
-    I --> J["Web Search"]
-    I --> K["Document Engine"]
-    I --> L["Utility Tools"]
-    I --> M["Memory Context"]
+    J --> K["Utility Tools"]
+    J --> L["Web Search"]
+    J --> M["Document Engine"]
+    J --> N["Memory Context"]
+
+    K --> O["Tool Results"]
+    L --> O
+    M --> O
+    N --> O
+
+    O --> I
+
+    I -->|"Returns JSON response"| B
+    B -->|"Displays reply"| A
 
     subgraph EXP["Independent AI Experiment"]
-        N["Custom GPT-Style Model"]
-        O["Python + NumPy"]
-        N --> O
+        P["Custom GPT-Style Neural Model"]
+        Q["Python + NumPy"]
+        P --> Q
     end
 ```
+
+The diagram represents the main processing flow. Optional tools provide additional information when enabled. Their results can be incorporated into response composition.
 
 The neural language model is an independent experiment and does not currently generate the application's chat responses.
 
@@ -259,16 +269,6 @@ http://127.0.0.1:8000
 MiniGPT/
 │
 ├── AI Experiments/
-│   ├── Tiny AI Engine/
-│   ├── Custom NLP/
-│   ├── Custom Reasoning Engine/
-│   ├── Mini GPT/
-│   ├── Web Search/
-│   ├── Document Engine/
-│   ├── Memory Context Engine/
-│   ├── Date Time Tool/
-│   ├── Unit Converter/
-│   └── ...
 │
 ├── Frontend/
 │
@@ -290,7 +290,7 @@ The following environment variables control selected capabilities:
 |---|---|
 | `TINY_AI_ALLOW_DOCUMENT_UPLOAD` | Enable or disable document uploads |
 | `TINY_AI_ALLOW_MEMORY` | Enable or disable persistent memory |
-| `TINY_AI_ALLOW_TEACHING` | Enable or disable the teaching functionality |
+| `TINY_AI_ALLOW_TEACHING` | Enable or disable teaching functionality |
 
 The provided Render configuration disables document uploads, persistent memory, and teaching by default.
 
@@ -309,9 +309,17 @@ Areas of ongoing work include:
 - Developing and experimenting with custom neural architectures.
 - Improving the overall application experience.
 
+## License
+
+This project is licensed under the **MIT License**.
+
+See the [LICENSE](LICENSE) file for the complete license text.
+
+---
+
 ## Important Development Notice
 
-**MiniGPT is in early development.**
+**MiniGPT is currently in early development.**
 
 This project is experimental, and its features are still being developed and tested.
 
@@ -324,22 +332,5 @@ This project is experimental, and its features are still being developed and tes
 
 MiniGPT should not be considered a reliable general-purpose AI assistant or a production-ready application.
 
-The project is being developed and improved progressively, and its behavior and capabilities may change significantly over time.
+Its capabilities, behavior, and functionality may change significantly as development progresses.
 
-## License
-
-This project is licensed under the **MIT License**.
-
-See the [LICENSE](LICENSE) file for the complete license text.
-
----
-
-<div align="center">
-
-**MiniGPT**
-
-*Built through experimentation, exploration, and independent development.*
-
-[GitHub Repository](https://github.com/omarabualnasr/MiniGPT)
-
-</div>
