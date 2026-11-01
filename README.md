@@ -1,51 +1,84 @@
-# MiniGPT
+![MiniGPT Banner](https://capsule-render.vercel.app/api?type=waving&color=0:101010,100:303030&height=190&section=header&text=MiniGPT&fontSize=58&fontColor=FFFFFF&fontAlignY=38&desc=EXPERIMENTAL%20AI%20CHAT%20APPLICATION&descAlignY=60&descSize=14&animation=fadeIn)
 
 <div align="center">
 
-### Experimental AI Chat Application
-
-An experimental AI project exploring custom-built intelligence systems, natural language processing, knowledge retrieval, and neural language models.
+**An experimental AI project exploring custom-built intelligence systems, natural language processing, knowledge retrieval, and neural language models.**
 
 <br/>
 
+[![Status](https://img.shields.io/badge/STATUS-EARLY%20DEVELOPMENT-555555?style=for-the-badge)](https://github.com/omarabualnasr/MiniGPT)
 [![Python](https://img.shields.io/badge/Python-3.x-3776AB?style=flat-square&logo=python&logoColor=white)](https://www.python.org/)
 [![NumPy](https://img.shields.io/badge/NumPy-Powered-013243?style=flat-square&logo=numpy&logoColor=white)](https://numpy.org/)
-[![License](https://img.shields.io/github/license/omarabualnasr/MiniGPT?style=flat-square)](./LICENSE)
+[![License](https://img.shields.io/github/license/omarabualnasr/MiniGPT?style=flat-square)](LICENSE)
 [![Last Commit](https://img.shields.io/github/last-commit/omarabualnasr/MiniGPT?style=flat-square)](https://github.com/omarabualnasr/MiniGPT/commits/main)
 
-[![Stars](https://img.shields.io/github/stars/omarabualnasr/MiniGPT?style=flat-square&label=Stars)](https://github.com/omarabualnasr/MiniGPT/stargazers)
-[![Forks](https://img.shields.io/github/forks/omarabualnasr/MiniGPT?style=flat-square&label=Forks)](https://github.com/omarabualnasr/MiniGPT/forks)
-[![Issues](https://img.shields.io/github/issues/omarabualnasr/MiniGPT?style=flat-square)](https://github.com/omarabualnasr/MiniGPT/issues)
+[![Stars](https://img.shields.io/github/stars/omarabualnasr/MiniGPT?style=social)](https://github.com/omarabualnasr/MiniGPT/stargazers)
+[![Forks](https://img.shields.io/github/forks/omarabualnasr/MiniGPT?style=social)](https://github.com/omarabualnasr/MiniGPT/forks)
+
+<br/>
+
+[Overview](#overview) · [Features](#features) · [Architecture](#architecture) · [Installation](#getting-started) · [Technology](#technology-stack)
 
 </div>
 
 ---
 
+<div align="center">
+
+<a href="https://github.com/omarabualnasr/MiniGPT">
+<img src="https://github-readme-stats.vercel.app/api/pin/?username=omarabualnasr&repo=MiniGPT&show_owner=true&theme=github_dark&hide_border=true" alt="MiniGPT repository statistics"/>
+</a>
+
+</div>
+
 ## Overview
 
-MiniGPT is an experimental AI project focused on building and integrating custom artificial intelligence components into an interactive chat application.
+MiniGPT is an experimental AI chat application focused on exploring how custom artificial intelligence components can be developed and integrated into a single interactive system.
 
-The project combines custom Python-based processing, natural language understanding, evidence-based knowledge retrieval, and a separate experimental neural language model.
+The project combines custom natural language processing, question analysis, evidence-based knowledge retrieval, response composition, and optional utility integrations.
 
-Rather than relying entirely on external AI services, MiniGPT explores how the underlying components of an AI system can be developed, understood, and integrated independently.
+It also includes an independent experimental GPT-style neural language model implemented using Python and NumPy.
+
+The main objective is to explore the underlying components of an AI application rather than depending entirely on an externally hosted language model.
+
+> **Development Notice:** MiniGPT is currently in early development. Its components and capabilities are experimental and are not yet reliable or production-ready. See [Known Limitations](#important-development-notice) before using it.
 
 ## Features
 
-### Custom AI Engine
+### 01. Custom Natural Language Processing
 
-- Custom natural language processing.
-- Intent detection and question analysis.
-- Context-aware question handling.
-- Knowledge retrieval and evidence ranking.
-- BM25-based information retrieval.
-- Evidence-grounded response composition.
-- Compound question decomposition.
+A custom NLP implementation designed to process and analyze incoming questions.
 
-### Optional Tools
+- Text normalization and tokenization.
+- Light lemmatization.
+- Typo correction.
+- Intent detection.
+- Keyword and phrase extraction.
+- Question-focus extraction.
+- Concept expansion.
+- Context resolution.
+- Compound-question analysis.
 
-MiniGPT includes several built-in tools that can be enabled individually.
+### 02. Custom Evidence & Retrieval Engine
 
-| Tool | Description |
+A custom retrieval and response-composition system designed to identify relevant information from available knowledge sources.
+
+- BM25-based evidence ranking.
+- Compound-question decomposition.
+- Topic inheritance.
+- Evidence diversity.
+- Focus-aware retrieval.
+- Explicit taxonomy relationships.
+- Shared document-passage ranking.
+- Extractive answer composition.
+
+**Important:** This is a custom retrieval and response-composition approach, not a general-purpose pretrained LLM.
+
+### 03. Optional Built-in Tools
+
+MiniGPT includes several tools that can be activated individually through the chat interface.
+
+| Tool | Purpose |
 |---|---|
 | Calculator | Mathematical calculations |
 | Unit Converter | Measurement conversions |
@@ -54,130 +87,164 @@ MiniGPT includes several built-in tools that can be enabled individually.
 | Scientific Math | Scientific and mathematical operations |
 | Text Analyzer | Text analysis |
 | JSON Tools | JSON processing |
-| Web Search | Search the web and news |
-| Document Reader | Retrieve information from uploaded documents |
-| Memory Context | Persistent context and conversation history |
+| Web Search | Web and news retrieval |
+| Document Reader | Document-based information retrieval |
+| Memory Context | Conversation and user context |
 
-All tools are disabled by default and can be enabled when needed.
+All tools are disabled by default and can be enabled individually.
 
-### Web Search
+### 04. Web Search
 
-Optional web search functionality using DDGS, including dedicated news search.
+Optional online search functionality powered by DDGS.
 
-- Web search and news retrieval.
-- Source-based results.
-- No search API key required by the included provider.
-- Search rate limiting.
+- Web search.
+- Dedicated news search.
+- External information retrieval.
+- Search results integrated into the chat workflow.
 
-### Document Understanding
+Internet connectivity is required for this functionality.
 
-Upload documents and retrieve relevant information from their contents.
+### 05. Document Understanding
+
+A document retrieval engine for extracting and searching information from uploaded files.
 
 Supported formats:
 
-`PDF` `DOCX` `TXT` `MD` `CSV` `HTML`
+`PDF` · `DOCX` · `TXT` · `MD` · `CSV` · `HTML`
 
-The document engine extracts content, organizes it into searchable sections, and retrieves relevant information in response to questions.
+Capabilities include:
 
-### Memory Context
+- Document text extraction.
+- Searchable document sections.
+- Passage-based retrieval.
+- Document-aware question processing.
+- Document summarization and information lookup.
 
-A custom memory system for maintaining useful information across conversations.
+### 06. Memory Context
 
-- Persistent user context.
+An experimental memory system designed to maintain useful information across conversations.
+
+- Persistent user profiles.
 - Conversation history.
 - Explicit memory commands.
 - Contextual follow-up handling.
+- Pronoun resolution.
 - Conversation recaps.
 - Memory deletion.
+- Per-user memory isolation.
 
-Memory is configurable and enabled by default for local use. Hosted deployments disable it by default.
+Memory availability depends on the deployment configuration.
+
+---
 
 ## Experimental Neural Language Model
 
-The project also contains a separate experimental GPT-style neural language model implemented using custom Python and NumPy components.
+MiniGPT also contains a separate GPT-style neural language model experiment developed using custom Python and NumPy components.
 
-Its architecture explores:
+The experimental architecture explores:
 
-- Rotary Positional Embeddings (RoPE).
-- RMS Normalization.
-- Grouped Query Attention (GQA).
-- SwiGLU feed-forward layers.
-- Custom NumPy-based automatic differentiation.
+| Component | Description |
+|---|---|
+| RoPE | Rotary Positional Embeddings |
+| RMSNorm | Root Mean Square Normalization |
+| GQA | Grouped Query Attention |
+| SwiGLU | Gated Feed-Forward Architecture |
+| Autograd | Custom automatic differentiation |
 
-**Important:** This is a separate AI experiment and is not currently connected to the chat application's response-generation pipeline.
+The experiment is maintained separately from the main chat application.
+
+**Current limitation:** The experimental neural language model is not currently connected to the chat response-generation pipeline. The main application uses its custom NLP and evidence-retrieval system.
+
+---
 
 ## Architecture
 
-The following diagram illustrates the main application components.
+The following diagram illustrates how the main application components are organized.
 
 ```mermaid
 flowchart TD
-    A[User] --> B[Frontend Chat Interface]
-    B <--> C[Python Backend]
+    A["User Input"] --> B["Frontend Chat Interface"]
+    B <--> C["Python Backend"]
 
-    C --> D[Custom NLP]
-    D --> E[Question Processing]
-    E --> F[Knowledge Engine]
-    F --> G[BM25 Evidence Retrieval]
-    G --> H[Response Composition]
+    C --> D["Custom NLP Engine"]
+    D --> E["Question Processing"]
+    E --> F["Knowledge & Retrieval Engine"]
+    F --> G["BM25 Evidence Ranking"]
+    G --> H["Response Composition"]
     H --> B
 
-    C --> I{Optional Tools}
-    I --> J[Web Search]
-    I --> K[Document Engine]
-    I --> L[Utility Tools]
-    I --> M[Memory Context]
+    E --> I["Optional Tool System"]
 
-    N[Experimental Neural Model] --> O[Model Checkpoints]
+    I --> J["Web Search"]
+    I --> K["Document Engine"]
+    I --> L["Utility Tools"]
+    I --> M["Memory Context"]
 
-    style A fill:#242424,color:#ffffff,stroke:#777777
-    style B fill:#242424,color:#ffffff,stroke:#777777
-    style C fill:#242424,color:#ffffff,stroke:#777777
-    style N fill:#242424,color:#ffffff,stroke:#777777
-    style O fill:#242424,color:#ffffff,stroke:#777777
+    subgraph EXP["Independent AI Experiment"]
+        N["Custom GPT-Style Model"]
+        O["Python + NumPy"]
+        N --> O
+    end
 ```
 
-The neural-model experiment operates separately from the main chat processing pipeline.
+The neural language model is an independent experiment and does not currently generate the application's chat responses.
 
 ## Technology Stack
 
 <div align="center">
 
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
-![NumPy](https://img.shields.io/badge/NumPy-013243?style=flat-square&logo=numpy&logoColor=white)
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
-![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![NumPy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 
 </div>
 
-| Component | Technology |
+| Layer | Technology |
 |---|---|
 | Backend | Python |
 | Numerical Computing | NumPy |
 | Frontend | HTML, CSS, JavaScript |
 | NLP | Custom implementation |
-| Retrieval | BM25-based custom engine |
+| Retrieval | Custom BM25-based engine |
 | Web Search | DDGS |
-| Neural Experiments | Python, NumPy |
+| PDF Processing | pypdf |
+| Neural Model Experiment | Python + NumPy |
 
 ## Getting Started
 
 ### Requirements
 
-- Python installed.
-- Windows for the included launcher.
-- Internet connection for dependency installation and optional web search.
+- Python installed on Windows.
+- Python launcher (`py`) available.
+- Internet access for dependency installation and optional web search.
 
 ### Installation
 
-Clone the repository:
+**1. Clone the repository**
 
 ```bash
 git clone https://github.com/omarabualnasr/MiniGPT.git
+```
+
+**2. Enter the project directory**
+
+```bash
 cd MiniGPT
 ```
+
+**3. Start MiniGPT**
+
+The easiest method is to run:
+
+```text
+Run Chat.bat
+```
+
+The launcher automatically installs the required Python dependencies and starts the application.
+
+### Manual Installation
 
 Install dependencies:
 
@@ -185,25 +252,19 @@ Install dependencies:
 python -m pip install -r requirements.txt
 ```
 
-### Run
-
-On Windows, simply execute:
-
-```text
-Run Chat.bat
-```
-
-Alternatively, start the application manually:
+Start the backend:
 
 ```bash
 python app.py
 ```
 
-The local application will be available at:
+Open the application at:
 
 ```text
 http://127.0.0.1:8000
 ```
+
+---
 
 ## Project Structure
 
@@ -214,59 +275,89 @@ MiniGPT/
 │   ├── Tiny AI Engine/
 │   ├── Custom NLP/
 │   ├── Custom Reasoning Engine/
+│   ├── Mini GPT/
 │   ├── Web Search/
 │   ├── Document Engine/
 │   ├── Memory Context Engine/
-│   ├── Mini GPT/
+│   ├── Date Time Tool/
+│   ├── Unit Converter/
 │   └── ...
 │
 ├── Frontend/
 │
-├── Run Chat.bat
 ├── app.py
+├── Run Chat.bat
 ├── requirements.txt
 ├── render.yaml
 ├── README.md
 └── LICENSE
 ```
 
-## Data & Privacy
+## Configuration & Deployment
 
-MiniGPT supports local document storage and persistent memory.
+MiniGPT supports local execution and includes a Render deployment configuration.
 
-- Local memory is stored on the local system.
-- Uploaded documents are stored in the application's data directory.
-- Optional tools are disabled until explicitly enabled.
-- Hosted deployment settings disable document uploads, persistent memory, and teaching by default.
+The following environment variables control selected capabilities:
 
-Always review the deployment configuration before enabling storage of user information on a hosted server.
+| Variable | Purpose |
+|---|---|
+| `TINY_AI_ALLOW_DOCUMENT_UPLOAD` | Enable or disable document uploads |
+| `TINY_AI_ALLOW_MEMORY` | Enable or disable persistent memory |
+| `TINY_AI_ALLOW_TEACHING` | Enable or disable the teaching functionality |
 
-## Deployment
+The provided Render configuration disables document uploads, persistent memory, and teaching by default.
 
-The repository includes a `render.yaml` configuration for deploying the application using Render.
+For local execution, memory and document upload settings can be configured independently.
 
-Hosted deployment settings are configured separately from the local environment.
+## Development Focus
 
-## Project Status
+Current development is focused on improving the underlying system rather than presenting it as a finished AI product.
 
-**Experimental Development**
+Areas of ongoing work include:
 
-MiniGPT is an evolving project focused on exploring custom AI architectures, improving language processing, and developing a modular AI application.
+- Improving question interpretation and retrieval accuracy.
+- Expanding and refining the available knowledge.
+- Improving response relevance and consistency.
+- Strengthening optional tool integrations.
+- Developing and experimenting with custom neural architectures.
+- Improving the overall application experience.
 
-Its components and capabilities may change as development progresses.
+## Important Development Notice
+
+**MiniGPT is in early development.**
+
+This project is experimental, and its features are still being developed and tested.
+
+- Some features may not work as expected.
+- Some tools may return incomplete results or fail.
+- The application may misunderstand questions.
+- It may be unable to answer certain questions, or may fail to provide a meaningful answer to any given question.
+- Responses may be inaccurate, incomplete, irrelevant, or inconsistent.
+- The experimental neural language model is not yet integrated into the chat response pipeline.
+
+MiniGPT should not be considered a reliable general-purpose AI assistant or a production-ready application.
+
+The project is being developed and improved progressively, and its behavior and capabilities may change significantly over time.
 
 ## License
 
-Distributed under the MIT License. See [LICENSE](./LICENSE) for more information.
+This project is licensed under the **MIT License**.
+
+See the [LICENSE](LICENSE) file for the complete license text.
 
 ---
 
 <div align="center">
 
-**MiniGPT**
+### MiniGPT
 
-*Exploring artificial intelligence by building its components from the ground up.*
+**Built through experimentation, exploration, and independent development.**
 
-[Repository](https://github.com/omarabualnasr/MiniGPT) · [Issues](https://github.com/omarabualnasr/MiniGPT/issues)
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github)](https://github.com/omarabualnasr/MiniGPT)
+
+<sub>Artificial Intelligence · Natural Language Processing · Computational Experiments</sub>
 
 </div>
+
+![Footer](https://capsule-render.vercel.app/api?type=waving&color=0:303030,100:101010&height=100&section=footer)
+
