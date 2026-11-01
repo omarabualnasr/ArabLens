@@ -1,19 +1,20 @@
-![MiniGPT Banner](https://capsule-render.vercel.app/api?type=waving&color=0:101010,100:303030&height=190&section=header&text=MiniGPT&fontSize=58&fontColor=FFFFFF&fontAlignY=38&desc=EXPERIMENTAL%20AI%20CHAT%20APPLICATION&descAlignY=60&descSize=14&animation=fadeIn)
+# <div align="center">MiniGPT</div>
 
 <div align="center">
 
-**An experimental AI project exploring custom-built intelligence systems, natural language processing, knowledge retrieval, and neural language models.**
+**Experimental AI Chat Application**
+
+An experimental AI project exploring custom-built intelligence systems, natural language processing, knowledge retrieval, and neural language models.
 
 <br/>
 
-[![Status](https://img.shields.io/badge/STATUS-EARLY%20DEVELOPMENT-555555?style=for-the-badge)](https://github.com/omarabualnasr/MiniGPT)
+[![Status](https://img.shields.io/badge/STATUS-EARLY%20DEVELOPMENT-555555?style=flat-square)](https://github.com/omarabualnasr/MiniGPT)
 [![Python](https://img.shields.io/badge/Python-3.x-3776AB?style=flat-square&logo=python&logoColor=white)](https://www.python.org/)
 [![NumPy](https://img.shields.io/badge/NumPy-Powered-013243?style=flat-square&logo=numpy&logoColor=white)](https://numpy.org/)
 [![License](https://img.shields.io/github/license/omarabualnasr/MiniGPT?style=flat-square)](LICENSE)
 [![Last Commit](https://img.shields.io/github/last-commit/omarabualnasr/MiniGPT?style=flat-square)](https://github.com/omarabualnasr/MiniGPT/commits/main)
-
-[![Stars](https://img.shields.io/github/stars/omarabualnasr/MiniGPT?style=social)](https://github.com/omarabualnasr/MiniGPT/stargazers)
-[![Forks](https://img.shields.io/github/forks/omarabualnasr/MiniGPT?style=social)](https://github.com/omarabualnasr/MiniGPT/forks)
+[![Stars](https://img.shields.io/github/stars/omarabualnasr/MiniGPT?style=flat-square)](https://github.com/omarabualnasr/MiniGPT/stargazers)
+[![Forks](https://img.shields.io/github/forks/omarabualnasr/MiniGPT?style=flat-square)](https://github.com/omarabualnasr/MiniGPT/forks)
 
 <br/>
 
@@ -22,14 +23,6 @@
 </div>
 
 ---
-
-<div align="center">
-
-<a href="https://github.com/omarabualnasr/MiniGPT">
-<img src="https://github-readme-stats.vercel.app/api/pin/?username=omarabualnasr&repo=MiniGPT&show_owner=true&theme=github_dark&hide_border=true" alt="MiniGPT repository statistics"/>
-</a>
-
-</div>
 
 ## Overview
 
@@ -41,7 +34,7 @@ It also includes an independent experimental GPT-style neural language model imp
 
 The main objective is to explore the underlying components of an AI application rather than depending entirely on an externally hosted language model.
 
-> **Development Notice:** MiniGPT is currently in early development. Its components and capabilities are experimental and are not yet reliable or production-ready. See [Known Limitations](#important-development-notice) before using it.
+> **Development Notice:** MiniGPT is currently in early development. Its components and capabilities are experimental and are not yet reliable or production-ready.
 
 ## Features
 
@@ -155,8 +148,6 @@ The experiment is maintained separately from the main chat application.
 
 **Current limitation:** The experimental neural language model is not currently connected to the chat response-generation pipeline. The main application uses its custom NLP and evidence-retrieval system.
 
----
-
 ## Architecture
 
 The following diagram illustrates how the main application components are organized.
@@ -191,15 +182,11 @@ The neural language model is an independent experiment and does not currently ge
 
 ## Technology Stack
 
-<div align="center">
-
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![NumPy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white)
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-
-</div>
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![NumPy](https://img.shields.io/badge/NumPy-013243?style=flat-square&logo=numpy&logoColor=white)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
 
 | Layer | Technology |
 |---|---|
@@ -349,15 +336,10 @@ See the [LICENSE](LICENSE) file for the complete license text.
 
 <div align="center">
 
-### MiniGPT
+**MiniGPT**
 
-**Built through experimentation, exploration, and independent development.**
+*Built through experimentation, exploration, and independent development.*
 
-[![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github)](https://github.com/omarabualnasr/MiniGPT)
-
-<sub>Artificial Intelligence · Natural Language Processing · Computational Experiments</sub>
+[GitHub Repository](https://github.com/omarabualnasr/MiniGPT)
 
 </div>
-
-![Footer](https://capsule-render.vercel.app/api?type=waving&color=0:303030,100:101010&height=100&section=footer)
-
